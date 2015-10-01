@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CEF3F612-13EC-4B9B-8216-25112C48BC7D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iocontacts</RootNamespace>
+    <AssemblyName>iocontacts</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="io">
+    </Reference>
+    <Reference Include="ioauth">
+    </Reference>
+    <Reference Include="iosystem">
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="Contants.cs" />
+    <Compile Include="Databases\io_contacts\Database.cs" />
+    <Compile Include="Databases\io_contacts\Tables\Entities.cs" />
+    <Compile Include="Databases\io_contacts\Tables\EntityAdmins.cs" />
+    <Compile Include="Databases\io_contacts\Tables\EntityContactRoles.cs" />
+    <Compile Include="Databases\io_contacts\Tables\EntityContacts.cs" />
+    <Compile Include="Databases\io_contacts\Tables\EntityLocationAdmins.cs" />
+    <Compile Include="Databases\io_contacts\Tables\EntityLocations.cs" />
+    <Compile Include="Databases\io_contacts\Tables\EntityTypes.cs" />
+    <Compile Include="Databases\io_contacts\Tables\EntityUserRoles.cs" />
+    <Compile Include="Databases\io_contacts\Tables\UserRoles.cs" />
+    <Compile Include="Databases\io_contacts\Tables\ZipCodes.cs" />
+    <Compile Include="Databases\io_contacts\Views\DataContracts\Login\GetUser.cs" />
+    <Compile Include="Databases\io_contacts\Views\DataContracts\Profiles\GetUserProfile.cs" />
+    <Compile Include="Databases\io_contacts\Views\Middleware\ActivateUser_EntityContacts.cs" />
+    <Compile Include="Databases\io_contacts\Views\Middleware\UserProfileExpiredPasswords.cs" />
+    <Compile Include="Email.cs" />
+    <Compile Include="Modules\Administration\EntityContact.cs" />
+    <Compile Include="Modules\Profiles\ActivateUsers.cs" />
+    <Compile Include="Modules\Profiles\Contacts.cs" />
+    <Compile Include="Modules\Profiles\DataContracts\ActivateUserData.cs" />
+    <Compile Include="Modules\Profiles\DataContracts\ForgotPasswordData.cs" />
+    <Compile Include="Modules\Profiles\DataContracts\ProfileData.cs" />
+    <Compile Include="Modules\Profiles\DataContracts\ResetPasswordData.cs" />
+    <Compile Include="Modules\Profiles\DataContracts\UpdatePasswordData.cs" />
+    <Compile Include="Modules\Profiles\EntityContact.cs" />
+    <Compile Include="Modules\Profiles\UIControllers\ActivateUser.cs" />
+    <Compile Include="Modules\Profiles\UIControllers\UserProfile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="License.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
